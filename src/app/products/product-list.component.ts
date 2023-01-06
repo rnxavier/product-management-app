@@ -1,8 +1,10 @@
 import { Component } from "@angular/core";
+import { IProduct } from "./product";
 
 @Component({
     selector: "pm-products",
-    templateUrl: "./product-list.component.html"
+    templateUrl: "./product-list.component.html",
+    styleUrls: ["./product-list.component.css"]
 })
 
 export class ProductListComponent {
@@ -11,7 +13,7 @@ export class ProductListComponent {
     showImage: boolean = true;
     listFilter: string = "cart";
 
-    products: any[] = [
+    products: IProduct[] = [
         {
         "productId": 2,
         "productName": "iPad",
@@ -20,7 +22,7 @@ export class ProductListComponent {
         "description": "Latest release tablet",
         "price": 849.99,
         "starRating": 4.7,
-        "imageURL": "../assets/ipad.jpeg"
+        "imageUrl": "../assets/ipad.jpeg"
     },
     {
         "productId": 5,
@@ -30,7 +32,7 @@ export class ProductListComponent {
         "description": "Desktop monitor with built-in PC",
         "price": 1299,
         "starRating": 4.9,
-        "imageURL": "../assets/imac.jpeg"
+        "imageUrl": "../assets/imac.jpeg"
     }
 ];
 

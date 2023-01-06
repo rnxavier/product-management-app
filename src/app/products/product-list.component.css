@@ -1,0 +1,14 @@
+thead {
+    color: #FF597B;
+}
+
+button {
+    background-color: #FF597B;
+    border-color: #FF597B;
+}
+
+button:hover {
+    background-color: #FF8E9E;
+    border-color: #FF8E9E;
+
+}
