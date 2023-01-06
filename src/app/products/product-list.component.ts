@@ -8,7 +8,8 @@ import { Component } from "@angular/core";
 export class ProductListComponent {
     pageTitle: string = "RJDevs Product Management";
     imageWidth: number = 100;
-    showImage: boolean = false;
+    showImage: boolean = true;
+    listFilter: string = "cart";
 
     products: any[] = [
         {
