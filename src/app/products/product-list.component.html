@@ -40,7 +40,7 @@
                     />
                 </td>
                 <td>{{item.productName}}</td>
-                <td>{{item.productCode}}</td>
+                <td>{{item.productCode | convertToSpaces : "-"}}</td>
                 <td>{{item.releaseDate}}</td>
                 <td>{{item.price | currency : "GBP"}}</td>
                 <td>{{item.starRating}}</td>
