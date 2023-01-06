@@ -59,7 +59,7 @@ performFilter(filterBy: string): IProduct[] {
 }
 
 ngOnInit(): void {
-    this.listFilter = "";
+    // this.listFilter = "";
 }
 
 }
