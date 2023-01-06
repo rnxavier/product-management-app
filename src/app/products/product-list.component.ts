@@ -11,7 +11,16 @@ export class ProductListComponent implements OnInit {
     pageTitle: string = "RJDevs Product Management";
     imageWidth: number = 100;
     showImage: boolean = true;
-    listFilter: string = "cart";
+    
+    private _listFilter: string = "";
+    get listFilter(): string {
+        return this._listFilter;
+    }
+    set listFilter(value: string) {
+        this._listFilter = value;
+        console.log("List filter is:", value);
+        
+    }
 
     products: IProduct[] = [
         {
@@ -41,7 +50,7 @@ toggleImage(): void {
 }
 
 ngOnInit(): void {
-    
+    this.listFilter = "cart";
 }
 
 }
