@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { IProduct } from "./product";
+import { ProductService } from "./product.service";
 
 @Component({
     selector: "pm-products",
@@ -8,6 +9,7 @@ import { IProduct } from "./product";
 })
 
 export class ProductListComponent implements OnInit {
+
     pageTitle: string = "Product List";
     imageWidth: number = 100;
     showImage: boolean = true;
@@ -25,28 +27,16 @@ export class ProductListComponent implements OnInit {
 
     filteredProducts: IProduct[] = [];
 
-    products: IProduct[] = [
-        {
-        "productId": 2,
-        "productName": "Apple iPad",
-        "productCode": "iO2-00234",
-        "releaseDate": "March 18, 2022",
-        "description": "Latest release tablet",
-        "price": 849.99,
-        "starRating": 3.8,
-        "imageUrl": "../assets/ipad.jpeg"
-    },
-    {
-        "productId": 5,
-        "productName": "Apple iMac",
-        "productCode": "iO5-00487",
-        "releaseDate": "June 5, 2021",
-        "description": "Desktop monitor with built-in PC",
-        "price": 1299,
-        "starRating": 4.2,
-        "imageUrl": "../assets/imac.jpeg"
+    products: IProduct[] = [];
+
+   // private _productService;
+    // constructor(productService: ProductService) {
+    //     this._productService = productService;
+    // }
+    //SHORTHAND
+    constructor(private productService: ProductService) {
+
     }
-];
 
 toggleImage(): void {
     this.showImage = !this.showImage  
@@ -63,7 +53,9 @@ onRatingClicked(message: string): void {
 }
 
 ngOnInit(): void {
-    this.listFilter = "Apple";
+    this.products = this.productService.getProducts();
+    this.filteredProducts = this.products;
+    // this.listFilter = "Apple";
 }
 
 }
