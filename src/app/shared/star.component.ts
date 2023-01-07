@@ -1,4 +1,5 @@
-import { Component, OnChanges, SimpleChanges } from "@angular/core";
+import { Component, EventEmitter, Input, OnChanges, Output } from "@angular/core";
+import { faStar } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
     selector: "pm-star",
@@ -7,15 +8,20 @@ import { Component, OnChanges, SimpleChanges } from "@angular/core";
 })
 
 export class StarComponent implements OnChanges{
-    cropWidth: number = 75;
-    rating: number = 4;
+    cropWidth: number = 100;
+    //Input passes information from parent to child component
+    @Input() rating: number = 0;
+    starIcon = faStar;
+    //Child component passes information to parent by emitting an event
+    @Output() ratingClicked: EventEmitter<string> = new EventEmitter<string>();
 
-    onClick() {
 
+    onClick(): void {
+        this.ratingClicked.emit((`The rating ${this.rating} was clicked`))
     }
 
     ngOnChanges(): void {
-        this.cropWidth = this.rating * 75/5
+        this.cropWidth = this.rating * 100/5 
     }
 }
 

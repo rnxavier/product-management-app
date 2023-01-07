@@ -8,7 +8,7 @@ import { IProduct } from "./product";
 })
 
 export class ProductListComponent implements OnInit {
-    pageTitle: string = "RJDevs Product Management";
+    pageTitle: string = "Product List";
     imageWidth: number = 100;
     showImage: boolean = true;
     
@@ -33,7 +33,7 @@ export class ProductListComponent implements OnInit {
         "releaseDate": "March 18, 2022",
         "description": "Latest release tablet",
         "price": 849.99,
-        "starRating": 4.7,
+        "starRating": 3.8,
         "imageUrl": "../assets/ipad.jpeg"
     },
     {
@@ -43,7 +43,7 @@ export class ProductListComponent implements OnInit {
         "releaseDate": "June 5, 2021",
         "description": "Desktop monitor with built-in PC",
         "price": 1299,
-        "starRating": 4.9,
+        "starRating": 4.2,
         "imageUrl": "../assets/imac.jpeg"
     }
 ];
@@ -58,8 +58,12 @@ performFilter(filterBy: string): IProduct[] {
         (item: IProduct) => item.productName.toLocaleLowerCase().includes(filterBy))
 }
 
+onRatingClicked(message: string): void {
+    this.pageTitle = "Product List: " + message;
+}
+
 ngOnInit(): void {
-    // this.listFilter = "";
+    this.listFilter = "Apple";
 }
 
 }
