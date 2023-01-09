@@ -14,6 +14,8 @@ export class ProductDetailComponent implements OnInit {
   errorMessage: string = "";
   chevronLeft = faChevronLeft;
 
+  //ActivatedRoute is used to get the params, Router is used for navigation
+
   constructor(private route: ActivatedRoute, private router: Router, private productService: ProductService) {
      
   }
@@ -33,7 +35,6 @@ export class ProductDetailComponent implements OnInit {
     }
     
   }
-
 
   handleBackClick(): void {
     this.router.navigate(["/products"])
