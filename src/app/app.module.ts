@@ -10,14 +10,18 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { StarComponent } from './shared/star.component';
+import { WelcomeComponent } from './home/welcome.component';
+import { ProductDetailComponent } from './products/product-detail.component';
 
 @NgModule({
   //Declaring components, directives and pipes that belong to this module
   declarations: [
     AppComponent,
+    WelcomeComponent,
     ProductListComponent,
     StarComponent,
-    ConvertToSpacesPipe
+    ConvertToSpacesPipe,
+    ProductDetailComponent
   ],
   //Pulling in external modules
   imports: [

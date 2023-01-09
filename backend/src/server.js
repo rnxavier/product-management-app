@@ -1,5 +1,7 @@
 import express from "express";
 
+// npx nodemon src/server.js
+
 let products = [
   {
     productId: 2,
