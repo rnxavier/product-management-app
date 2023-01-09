@@ -4,7 +4,7 @@ import express from "express";
 
 let products = [
   {
-    productId: 2,
+    productId: 1,
     productName: "Apple iPad",
     productCode: "iO2-00234",
     releaseDate: "March 18, 2022",
@@ -14,7 +14,7 @@ let products = [
     imageUrl: "../assets/ipad.jpeg",
   },
   {
-    productId: 5,
+    productId: 2,
     productName: "Apple iMac",
     productCode: "iO5-00487",
     releaseDate: "June 5, 2021",

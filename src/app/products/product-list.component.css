@@ -10,5 +10,9 @@ button {
 button:hover {
     background-color: #FF8E9E;
     border-color: #FF8E9E;
+}
 
+a {
+    cursor: pointer;
+    text-decoration: none;
 }
