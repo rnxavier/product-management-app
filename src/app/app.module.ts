@@ -5,8 +5,8 @@ import { CommonModule } from '@angular/common';
 import {HttpClientModule} from "@angular/common/http";
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ConvertToSpacesPipe } from './shared/convert-to-space.pipe';
+import { RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductListComponent } from './products/product-list.component';
 import { StarComponent } from './shared/star.component';
@@ -26,11 +26,17 @@ import { ProductDetailComponent } from './products/product-detail.component';
   //Pulling in external modules
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    RouterModule.forRoot([
+      {path: "products", component: ProductListComponent},
+      {path: "products/:id", component: ProductDetailComponent},
+      {path: "welcome", component: WelcomeComponent},
+      {path: "", redirectTo: "welcome", pathMatch: "full"},
+      {path: "**", redirectTo: "welcome", pathMatch: "full"}
+    ]),
     FormsModule,
     CommonModule,
     FontAwesomeModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
